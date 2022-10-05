@@ -22,6 +22,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: update description
-        uses: cleiltonoliveira/pr-updater@v1.1
+        uses: cleiltonoliveira/pr-updater@v1.2
         with:
           accessToken: ${{ secrets.GITHUB_TOKEN }} 
