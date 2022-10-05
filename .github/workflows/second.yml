@@ -1,0 +1,27 @@
+name: 'Commit Message Check'
+on:
+  pull_request:
+    types:
+      - opened
+      - edited
+      - reopened
+      - synchronize
+  pull_request_target:
+    types:
+      - opened
+      - edited
+      - reopened
+      - synchronize
+  push:
+    branches:
+      - main
+      - 'releases/*'
+jobs:
+  check-commit-message:
+    name: Check Commit Message
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check Line Length
+        uses: cleiltonoliveira/pr-updater@v1.1
+        with:
+          accessToken: ${{ secrets.GITHUB_TOKEN }} 
