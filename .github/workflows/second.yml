@@ -1,4 +1,4 @@
-name: 'Commit Message Check'
+name: 'Pull request updater'
 on:
   pull_request:
     types:
@@ -18,10 +18,10 @@ on:
       - 'releases/*'
 jobs:
   check-commit-message:
-    name: Check Commit Message
+    name: update description
     runs-on: ubuntu-latest
     steps:
-      - name: Check Line Length
+      - name: update description
         uses: cleiltonoliveira/pr-updater@v1.1
         with:
           accessToken: ${{ secrets.GITHUB_TOKEN }} 
